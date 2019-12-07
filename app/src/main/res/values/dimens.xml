@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="main_item_horizontal_margin">5dp</dimen>
+    <dimen name="main_item_vertical_margin">2dp</dimen>
+
+    <dimen name="wide_size">40px</dimen>
+
+</resources>

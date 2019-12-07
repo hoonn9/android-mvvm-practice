@@ -16,6 +16,7 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -24,7 +25,7 @@ import io.reactivex.subscribers.DefaultSubscriber;
 public class HomeFragment extends Fragment implements HomeAdapter.ViewHolder.OpenProfileListener{
     private SwipeRefreshLayout mSwipeLyt;
     private RecyclerView mRecyclerView;
-
+    private RecyclerView hotRecyclerView;
     private HomeAdapter mAdapter;
     private StackExchangeManager mManager;
 
@@ -42,13 +43,18 @@ public class HomeFragment extends Fragment implements HomeAdapter.ViewHolder.Ope
 
         mSwipeLyt = (SwipeRefreshLayout) v.findViewById(R.id.swiperefresh);
         mRecyclerView = (RecyclerView) v.findViewById(R.id.home_rv);
+        hotRecyclerView = (RecyclerView) v.findViewById(R.id.home_hot_rv);
 
         mAdapter = new HomeAdapter(getActivity(), new ArrayList<User>());
         mAdapter.setOpenProfileListener(this);
-        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
+        GridLayoutManager llm = new GridLayoutManager(getActivity(), 2);
+        //llm.setOrientation(LinearLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(llm);
         mRecyclerView.setAdapter(mAdapter);
+        GridLayoutManager glm = new GridLayoutManager(getActivity(), 3);
+        hotRecyclerView.setLayoutManager(glm);
+        hotRecyclerView.setAdapter(mAdapter);
+
 
         mManager = new StackExchangeManager();
 

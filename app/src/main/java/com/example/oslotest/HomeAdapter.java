@@ -35,8 +35,6 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
     public void updateUsers(List<User> users) {
         mUsers.clear();
         mUsers.addAll(users);
-        Log.d("테스트","ㅇㅇㅇㅇ");
-        Log.d("테스트",mUsers.isEmpty() + "");
         notifyDataSetChanged();
     }
 
@@ -48,39 +46,9 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Log.d("테스트","onBindViewHolder");
         if (position < mUsers.size()) {
             User user = mUsers.get(position);
             holder.setUser(user);
-
-
-//            holder.name.setText(user.getDisplayName());
-//            holder.city.setText(user.getLocation());
-//            holder.reputation.setText(String.valueOf(user.getReputation()));
-//
-//            Glide.with(context).load(user.getProfileImage()).centerCrop().into(holder.user_image);
-//            //ImageLoader.getInstance().displayImage(user.getProfileImage(), user_image);
-//
-//            RxView.clicks(holder.mView).subscribe(new DefaultObserver<Object>() {
-//                @Override
-//                public void onNext(@NonNull Object o) {
-//                    Preconditions.checkNotNull(mProfileListener, "Empty Listener");
-//                    String url = user.getWebsiteUrl();
-//                    if (url != null)
-//                        mProfileListener.open(url);
-//                    else
-//                        mProfileListener.open(user.getLink());
-//                }
-//
-//                @Override
-//                public void onError(@NonNull Throwable e) {
-//                }
-//
-//                @Override
-//                public void onComplete() {
-//
-//                }
-//            });
         }
     }
 
