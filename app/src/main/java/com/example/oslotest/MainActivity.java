@@ -2,7 +2,9 @@ package com.example.oslotest;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
+import jp.wasabeef.blurry.Blurry;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         main_toolbar_iv = (ImageView) findViewById(R.id.main_toolbar_iv);
         Glide.with(this).load("http://m.oslokorea.co.kr/data/goods/18/03/11/1000000026/1000000026_detail_046.jpg").centerCrop().into(main_toolbar_iv);
+
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setCustomView(createTabView("메인")));
         tabLayout.addTab(tabLayout.newTab().setCustomView(createTabView("마이페이지")));
@@ -48,9 +51,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-
-
 
     }
 
