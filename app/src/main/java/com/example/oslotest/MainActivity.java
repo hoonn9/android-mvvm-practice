@@ -41,6 +41,7 @@ import com.google.android.material.tabs.TabLayout;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -135,10 +136,17 @@ public class MainActivity extends AppCompatActivity {
         ResultSet result = null;
         try {
             result = query.execute();
+            for (Result result1 : result.allResults()) {
+                Log.i(
+                        "Sample",
+                        String.format("public_likes -> %s", result1.getString("language")));
+            }
         } catch (CouchbaseLiteException e) {
             e.printStackTrace();
         }
-        Log.i(TAG, "Number of rows ::  " + result.allResults().size());
+
+
+        //Log.i(TAG, "Number of rows ::  " + result.allResults().size());
 
 // Create replicators to push and pull changes to and from the cloud.
         Endpoint targetEndpoint = null;
