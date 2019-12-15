@@ -8,6 +8,10 @@
         <variable
             name="view"
             type="com.example.oslotest.MainActivity" />
+        
+        <variable
+            name="model"
+            type="com.example.oslotest.viewmodelimpl.screen.MainScreenViewModelImpl" />
     </data>
 
     <androidx.drawerlayout.widget.DrawerLayout
@@ -69,7 +73,7 @@
                 android:id="@+id/viewpager"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
 
             <com.google.android.material.tabs.TabLayout
@@ -79,7 +83,8 @@
                 android:layout_gravity="bottom"
                 android:background="@color/colorPrimary"
                 app:tabGravity="fill"
-                app:tabMode="fixed" />
+                app:tabMode="fixed"
+                app:setupWithViewPager="@{viewpager}"/>
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
     </androidx.drawerlayout.widget.DrawerLayout>

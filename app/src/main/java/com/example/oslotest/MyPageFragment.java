@@ -16,6 +16,10 @@ import androidx.fragment.app.Fragment;
 
 public class MyPageFragment extends Fragment {
 
+    public static MyPageFragment instance() {
+        return new MyPageFragment();
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

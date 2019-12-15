@@ -1,6 +1,8 @@
 package com.example.oslotest.viewimpl;
 
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.oslotest.R;
 import com.example.oslotest.view.LoginView;
@@ -13,16 +15,16 @@ public class MainViewImpl implements MainView {
 
     private View mMainView;
     private LifecycleOwner mLifecycleOwner;
-    private LoginView.ActionListener mActionListener;
+    private MainView.ActionListener mActionListener;
 
     public MainViewImpl(View view, LifecycleOwner lifecycleOwner) {
         mMainView = view;
         mLifecycleOwner = lifecycleOwner;
-
-        SignInButton signInButton = mMainView.findViewById(R.id.sign_in_btn);
-        signInButton.setSize(SignInButton.SIZE_STANDARD);
-        signInButton.setOnClickListener(v -> mActionListener.onRequestedSignIn());
     }
 
+    @Override
+    public void setActionListener(MainView.ActionListener actionListener) {
+        mActionListener = actionListener;
+    }
 
 }

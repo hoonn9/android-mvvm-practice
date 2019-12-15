@@ -1,38 +1,36 @@
 package com.example.oslotest;
 
+import java.util.ArrayList;
+
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
 public class FragmentPagerAdapter extends FragmentStatePagerAdapter {
+    private ArrayList<Fragment> fragments = new ArrayList<>();
+    private ArrayList<String> titles = new ArrayList<>();
 
-    private int mPageCount;
-
-    public FragmentPagerAdapter(FragmentManager fm, int pageCount) {
+    public FragmentPagerAdapter(FragmentManager fm) {
         super(fm);
-        this.mPageCount = pageCount;
+    }
+
+    public void add(Fragment fragment) {
+        fragments.add(fragment);
     }
 
     @Override
     public Fragment getItem(int position) {
-        switch (position) {
-            case 0:
-                HomeFragment homeFragment = new HomeFragment();
-                return homeFragment;
-            case 1:
-                MyPageFragment myPageFragment = new MyPageFragment();
-                return  myPageFragment;
-
-            default:
-                return null;
-
-        }
-
+        return fragments.get(position);
     }
 
     @Override
     public int getCount() {
-        return mPageCount;
+        return fragments.size();
     }
 
+//    @Override
+//    public CharSequence getPageTitle(int position) {
+//        // Generate title based on item position
+//        return titles.get(position);
+//    }
 }

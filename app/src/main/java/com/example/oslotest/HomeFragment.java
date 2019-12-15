@@ -35,6 +35,11 @@ public class HomeFragment extends Fragment implements HomeAdapter.ViewHolder.Ope
     private HomeAdapter mAdapter;
     private StackExchangeManager mManager;
     int blur_temp = 255;
+
+    public static HomeFragment instance() {
+        return new HomeFragment();
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
