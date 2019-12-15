@@ -1,11 +1,7 @@
 package com.example.oslotest;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
-import jp.wasabeef.blurry.Blurry;
-
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,14 +19,9 @@ import com.couchbase.lite.DatabaseConfiguration;
 import com.couchbase.lite.Document;
 import com.couchbase.lite.Endpoint;
 import com.couchbase.lite.Expression;
-import com.couchbase.lite.Function;
-import com.couchbase.lite.Meta;
 import com.couchbase.lite.MutableDocument;
-import com.couchbase.lite.Ordering;
 import com.couchbase.lite.Query;
 import com.couchbase.lite.QueryBuilder;
-import com.couchbase.lite.QueryChange;
-import com.couchbase.lite.QueryChangeListener;
 import com.couchbase.lite.Replicator;
 import com.couchbase.lite.ReplicatorConfiguration;
 import com.couchbase.lite.Result;
@@ -41,7 +32,6 @@ import com.google.android.material.tabs.TabLayout;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
