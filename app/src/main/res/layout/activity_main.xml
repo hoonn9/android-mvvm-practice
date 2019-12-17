@@ -8,10 +8,6 @@
         <variable
             name="view"
             type="com.example.oslotest.MainActivity" />
-        
-        <variable
-            name="model"
-            type="com.example.oslotest.viewmodelimpl.screen.MainScreenViewModelImpl" />
     </data>
 
     <androidx.drawerlayout.widget.DrawerLayout

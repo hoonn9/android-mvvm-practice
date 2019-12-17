@@ -2,13 +2,9 @@ package com.example.oslotest.common;
 
 import android.util.Log;
 
-/**
- * @author firefly2.kim
- * @since 19. 8. 24
- */
 public class Logger {
 
-    private static final String APP_TAG = "firefly-sns";
+    private static final String APP_TAG = "olsotest";
 
     public static void d(String tag, String msg) {
         Log.d(APP_TAG, "[" + tag + "]" + msg);
