@@ -1,1 +1,1 @@
-# OsloTest
+# android-mvvm-practice
